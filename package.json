@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "project3",
   "version": "0.1.0",
   "private": true,
@@ -11,24 +12,34 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1"
   },
+=======
+  "name": "mern",
+  "version": "1.0.0",
+  "main": "server.js",
+>>>>>>> faf410984dcabe5374e4108c06943e233245e21f
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "eject": "react-scripts eject"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "gh-pages": "^2.0.1"
-  }
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "express": "^4.16.4",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.3.14",
+    "validator": "^10.9.0"
+  },
+  "keywords": [],
+  "description": ""
 }
