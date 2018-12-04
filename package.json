@@ -22,7 +22,9 @@
     "axios": "^0.16.2",
     "express": "^4.16.4",
     "if-env": "^1.0.4",
+    "konva": "^2.5.1",
     "mongoose": "^5.3.14",
+    "react-konva": "^16.6.31",
     "validator": "^10.9.0"
   },
   "keywords": [],

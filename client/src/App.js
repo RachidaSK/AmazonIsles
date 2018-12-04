@@ -1,42 +1,42 @@
 import React, { Component } from 'react';
+import { render } from 'react-dom';
 import * as $ from 'axios';
-
+import { Stage, Layer } from 'react-konva';
+import { Image } from 'react-konva';
 
 class App extends Component {
-
   state = {
-    notesList: [],
-    newNote: ''
-  }
-
-  handleChange = (event) => {
-    this.setState({newNote: event.target.value})
-  }
-
-  handleClick = (event) => {
-    event.preventDefault();
-    /*
-    $.post('/api/note', {content: this.state.newNote})
-    .then((result) => {
-      console.log(result.data);
-    }) */
-  }
-
-  componentDidMount(){
-    /* $.get('/api/notes')
-    .then((result) => {
-      this.setState({notesList: result.data})
-    }) */
-  }
+    isDragging: false
+  };
 
   render() {
     return (
-      <div className="App">
-        <form>
-          <input val={this.state.newNote} onChange={this.handleChange} />
-          <button onClick={this.handleClick}>Submit</button>
-        </form>
-      </div>
+      <Stage width={window.innerWidth} height={window.innerHeight}>
+        <Layer>
+          
+          <Image
+            
+            src="./components/shirtButtondown.gif"
+            
+            x={100}
+            y={50}
+            
+            draggable
+            
+            
+            onDragStart={() => {
+              this.setState({
+                isDragging: true
+              });
+            }}
+            onDragEnd={() => {
+              this.setState({
+                isDragging: false
+              });
+            }}
+          />
+        </Layer>
+      </Stage>
     );
   }
 }
