@@ -13,20 +13,20 @@ class App extends Component {
     this.setState({newNote: event.target.value})
   }
 
-  handleClick = (event) => {
-    event.preventDefault();
-    $.post('/api/note', {content: this.state.newNote})
-    .then((result) => {
-      console.log(result.data);
-    })
-  }
+  // handleClick = (event) => {
+  //   event.preventDefault();
+  //   $.post('/api/note', {content: this.state.newNote})
+  //   .then((result) => {
+  //     console.log(result.data);
+  //   })
+  // }
 
-  componentDidMount(){
-    $.get('/api/notes')
-    .then((result) => {
-      this.setState({notesList: result.data})
-    })
-  }
+  // componentDidMount(){
+  //   $.get('/api/notes')
+  //   .then((result) => {
+  //     this.setState({notesList: result.data})
+  //   })
+  // }
 
   render() {
     return (
