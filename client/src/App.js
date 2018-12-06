@@ -1,42 +1,30 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
-import * as $ from 'axios';
-import { Stage, Layer } from 'react-konva';
-import { Image } from 'react-konva';
+// import { render } from 'react-dom';
+// import Img from './components/testshirt.png';
+import Card from './components/Canvas'
+
+
+const Images = () => (
+  <div id="container">
+    
+  </div>
+)
+
+
 
 class App extends Component {
-  state = {
-    isDragging: false
-  };
-
   render() {
     return (
-      <Stage width={window.innerWidth} height={window.innerHeight}>
-        <Layer>
-          
-          <Image
-            
-            src="./components/shirtButtondown.gif"
-            
-            x={100}
-            y={50}
-            
-            draggable
-            
-            
-            onDragStart={() => {
-              this.setState({
-                isDragging: true
-              });
-            }}
-            onDragEnd={() => {
-              this.setState({
-                isDragging: false
-              });
-            }}
-          />
-        </Layer>
-      </Stage>
+      
+      
+        <div className="App">
+        <h1>Stuff</h1>
+        <Card />
+        <Images />
+        </div>
+      
+      
+      
     );
   }
 }
