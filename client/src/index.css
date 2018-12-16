@@ -12,3 +12,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.naviguation {
+  background: #540a88;
+  height: 70px;
+}
+
+#brand {
+  font-family: 'Noto Sans SC', sans-serif;
+  color: #ffffff;
+  font-size: 35px;
+}
+
+.naviguation-link {
+  color: #ffffff;
+}
+
+img.card-image.img-fluid.card-img {
+  height: 580px;
+}
+
+
+button.login-btn {
+  width: 100%;
+  background-color: #540a88;
+  border-color: #540a88;
+}
+
+
+

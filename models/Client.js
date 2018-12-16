@@ -1,56 +1,55 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-var validator = require('validator');
+const User = require("./User");
 
 var ClientSchema = new Schema({
-    userId: {
-        type: String,
-        trim: true,
-        validate:[validator.isEmail, "invalid email"],
-        required: "Please type your user ID(email address)."
-    },
-    password: {
-        type: String,
-        trim: true,
-        required: "Please type your password."
-    },
-    phone: {
-        type: String,
-        trim: true,
-        required: "Please enter your phone number."
-    },
-    street: {
-        type: String,
-        trim: true,
-        required: "Please enter street address."
-    },
-    city: {
-        type: String,
-        trim: true,
-        required: "Please enter city."
-    },
-    state: {
-        type: String,
-        trim: true,
-        required: "Please enter state."
-    },
-    country: {
-        type: String,
-        trim: true,
-        required: "Please enter country."
-    },
-    measurements: {
-        type: Schema.Types.ObjectId,
-        ref: "Measurement",
-    },
-    clothes: [
-        {
-        type: Schema.Types.ObjectId,
-        ref: "Clothes"
+    measurement: {
+
+        bust: {
+            type: Number,
+            default: 0,
+            trim: true
+        },
+        waist: {
+            type: Number,
+            default: 0,
+            trim: true
+        },
+        hips: {
+            type: Number,
+            default: 0,
+            trim: true
+        },
+        knee_length: {
+            type: Number,
+            default: 0,
+            trim: true
+        },        
+        leg_length: {
+            type: Number,
+            default: 0,
+            trim: true
+        },
+        bp_length: {
+            type: Number,
+            default: 0,
+            trim: true
+        },
+        back_length: {
+            type: Number,
+            default: 0,
+            trim: true
+        },
+        arm_length: {
+            type: Number,
+            default: 0,
+            trim: true
         }
-    ]   
+    }
   });
   
-  const Client = mongoose.model("Client", ClientSchema);
+  const Client = User.discriminator("Client", ClientSchema, {
+      discriminatorKey: "type"
+  });
   
   module.exports = Client;

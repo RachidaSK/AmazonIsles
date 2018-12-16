@@ -1,61 +1,29 @@
 import React, { Component } from 'react';
-import * as $ from 'axios';
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+import Homepage from './Pages/HomePage/homepage';
+import Clientpage from './Pages/ClientPage/clientpage';
+import Fashionpage from './Pages/FashionPage/fashionpage';
+import './App.css';
+import Providerpage from './Pages/ProviderPage/providerpage'
+import Searchpage from './Pages/SearchPage/searchpage'
+import OtherServices from './Pages/HomePage/OtherServices'
 
 
-class App extends Component {
+const App = () => (
+ 
+  <BrowserRouter>
+      <Switch>
+        <Route exact path='/' component={Homepage} />
+        <Route exact path='/client' component={Clientpage} />
+        <Route exact path='/provider' component={Providerpage} />
+        <Route exact path='/fashion' component={Fashionpage} />  
+        <Route exact path='/search' component={Searchpage} />
+        <Route exact path='/OtherServices' component={OtherServices} />
+        
+      </Switch>
+  </BrowserRouter>
 
-  state = {
-    notesList: [],
-    newNote: ''
-  }
+)
 
-  handleChange = (event) => {
-    this.setState({newNote: event.target.value})
-  }
-
-<<<<<<< HEAD:src/App.js
-  // handleClick = (event) => {
-  //   event.preventDefault();
-  //   $.post('/api/note', {content: this.state.newNote})
-  //   .then((result) => {
-  //     console.log(result.data);
-  //   })
-  // }
-
-  // componentDidMount(){
-  //   $.get('/api/notes')
-  //   .then((result) => {
-  //     this.setState({notesList: result.data})
-  //   })
-  // }
-=======
-  handleClick = (event) => {
-    event.preventDefault();
-    /*
-    $.post('/api/note', {content: this.state.newNote})
-    .then((result) => {
-      console.log(result.data);
-    }) */
-  }
-
-  componentDidMount(){
-    /* $.get('/api/notes')
-    .then((result) => {
-      this.setState({notesList: result.data})
-    }) */
-  }
->>>>>>> faf410984dcabe5374e4108c06943e233245e21f:client/src/App.js
-
-  render() {
-    return (
-      <div className="App">
-        <form>
-          <input val={this.state.newNote} onChange={this.handleChange} />
-          <button onClick={this.handleClick}>Submit</button>
-        </form>
-      </div>
-    );
-  }
-}
 
 export default App;
