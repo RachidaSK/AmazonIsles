@@ -1,22 +1,7 @@
 {
-<<<<<<< HEAD
-  "name": "project3",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "http://cindy046.github.io/amazonisles",
-  "proxy": "http://localhost:3001/",
-  "dependencies": {
-    "axios": "^0.18.0",
-    "react": "^16.6.1",
-    "react-dom": "^16.6.1",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.1"
-  },
-=======
   "name": "mern",
   "version": "1.0.0",
   "main": "server.js",
->>>>>>> faf410984dcabe5374e4108c06943e233245e21f
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
