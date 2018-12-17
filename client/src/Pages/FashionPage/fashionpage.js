@@ -99,7 +99,7 @@ class FashionPage extends Component {
               <button onClick={this.clickHandler} >Display Available Provider</button>
             </div>
 
-            <ProviderInfo providerList={this.state.providerList} clickProvider={this.clickProvider} />np
+            <ProviderInfo providerList={this.state.providerList} clickProvider={this.clickProvider} />
           </Col>
         </Row>
 
