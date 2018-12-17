@@ -55,18 +55,7 @@ class UserModal extends React.Component {
 
     const updatedUser = Object.assign({}, this.state.user);
 
-    if (event.target.name === "availability" && event.target.value === "true") {
-      this.setState({
-        [event.target.name]: true
-      });
-    } else if (
-      event.target.name === "availability" &&
-      event.target.value === "false"
-    ) {
-      this.setState({
-        [event.target.name]: false
-      });
-    } else if (
+    if (
         type === "provider"
     ) {
         updatedUser[type][prop] = event.target.value;
