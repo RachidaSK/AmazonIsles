@@ -91,6 +91,8 @@ export function logout() {
     localStorage.removeItem('Loggedin')
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
+    localStorage.removeItem('token');
+    localStorage.removeItem('name');
     localStorage.removeItem('expires_in');
     localStorage.setItem('expires_at', 0);
     window.location.replace("https:/mypass.auth0.com/v2/logout");
